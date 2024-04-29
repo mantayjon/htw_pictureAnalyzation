@@ -1,0 +1,22 @@
+plugins {
+	id 'java'
+	id 'eclipse'
+	id 'idea'
+}
+
+// character encoding
+tasks.withType(AbstractCompile)*.options*.encoding = "UTF-8"
+
+// where are the dependencies located
+repositories {
+	maven { 
+		url 'http://maven.visual-computing.com/'
+		allowInsecureProtocol = true 
+	}
+}
+
+// which dependencies does the projet have
+dependencies {
+	implementation 'de.htw.ba:Safe:1.0'			
+	implementation 'de.htw.ba:Stethoscope:1.0'			
+}
